@@ -1,0 +1,12 @@
+<div class="bg-slate-600 h-screen ">
+  <div class="pt-10 flex justify-center items-center grid">
+    <h1 class="text-4xl text-white">Welcome to all your tasks  👋🏼</h1>
+    <div class="mt-6">
+        <% @tasks.each do |task| %>
+        <%= link_to task_path(task) do %>
+          <li class="pr-5 pl-5 flex justify-between bg-slate-400 hover:bg-slate-500 rounded pt-2 pb-2 text-white text-lg mb-2"><%= task.title %><%= link_to "❌", task_path(task), data: { turbo_method: :delete} %></li>
+         <% end %>
+       <% end %>
+    </div>
+  </div>
+</div>
